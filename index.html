@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プライバシーポリシー｜ねこ玉ジャンプ</title>
+<meta name="description" content="ゲーム「ねこ玉ジャンプ」のプライバシーポリシー。記録は端末の中に保存し、独自のサーバーは持ちません。">
+<style>
+  /* 配色はアプリ本体（lib/game/palette.dart）のさくら色に合わせている。
+     フォントは端末に入っているものだけを使い、外部から何も読み込まない
+     （ページを開いただけで第三者へ通信が飛ばないようにするため）。 */
+  :root {
+    --page: #fbd0e0;
+    --paper: #fffaf6;
+    --ink: #4a3b45;
+    --ink-soft: #7e6776;
+    --accent: #c9557f;
+    --line: #e6d3de;
+    --faint: #fdf1f6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --page: #2a1f26;
+      --paper: #362a32;
+      --ink: #f6e9f0;
+      --ink-soft: #c9b3c1;
+      --accent: #f59cbd;
+      --line: #56434f;
+      --faint: #402f3a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 20px 48px;
+    background: var(--page);
+    color: var(--ink);
+    font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+                 "Noto Sans JP", "Yu Gothic Medium", "Yu Gothic", Meiryo, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.9;
+    -webkit-text-size-adjust: 100%;
+  }
+  .sheet {
+    max-width: 720px;
+    margin: 40px auto 0;
+    background: var(--paper);
+    border-radius: 26px;
+    padding: 40px 32px 44px;
+    box-shadow: 0 3px 0 rgba(74, 59, 69, .1), 0 18px 34px rgba(74, 59, 69, .18);
+  }
+  header { border-bottom: 2px solid var(--line); padding-bottom: 20px; }
+  .app { font-size: 14px; letter-spacing: .2em; color: var(--ink-soft); margin: 0 0 6px; font-weight: 700; }
+  h1 { font-size: 26px; line-height: 1.5; margin: 0 0 12px; font-weight: 800; }
+  .dates { font-size: 13px; color: var(--ink-soft); margin: 0; }
+  h2 {
+    font-size: 18px;
+    margin: 40px 0 12px;
+    padding-left: 12px;
+    border-left: 5px solid var(--accent);
+    line-height: 1.6;
+  }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 1.4em; }
+  li { margin-bottom: 6px; }
+  a { color: var(--accent); }
+  .lead, .contact {
+    background: var(--faint);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin: 24px 0 8px;
+  }
+  .lead p:last-child, .contact p:last-child { margin-bottom: 0; }
+  .contact .mail { font-size: 18px; font-weight: 700; word-break: break-all; }
+  @media (max-width: 600px) {
+    body { padding: 0 12px 32px; font-size: 15px; }
+    .sheet { padding: 28px 20px 32px; margin-top: 20px; border-radius: 20px; }
+    h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+<main class="sheet">
+  <header>
+    <p class="app">ねこ玉ジャンプ</p>
+    <h1>プライバシーポリシー</h1>
+    <p class="dates">最終更新日：2026年9月27日</p>
+  </header>
+
+  <div class="lead">
+    <p>ゲーム「ねこ玉ジャンプ」（以下「本アプリ」）は、<strong>独自のサーバーを持たず、利用者の個人情報を集めることも、第三者へ販売・提供することもありません。</strong>遊んだ記録は端末の中に保存します。ランキングを使うときにかぎり、Apple の Game Center へ得点などを送ります。</p>
+  </div>
+
+  <h2>1. 端末の中に保存する情報</h2>
+  <p>ゲームを続けて遊べるようにするため、次の情報を<strong>お使いの端末の中だけ</strong>に保存します（iOS の標準的な保存領域を使います）。いずれも個人を特定できる情報ではなく、外部へ送信することも、作者が見ることもありません。</p>
+  <ul>
+    <li>ベスト（いちばんよい得点）と、そのとき連れていたネコ</li>
+    <li>カリカリ（ゲーム内で集めるアイテム）の数</li>
+    <li>ネコずかん（仲間になったネコ・選んでいるネコ）と、ネコごとのなかよし度</li>
+    <li>音の ON／OFF</li>
+    <li>Game Center へ送り終えた得点の控え（送り直しが必要かを判断するため）</li>
+  </ul>
+  <p>本アプリを端末から削除すると、上記のすべてが消去されます。<strong>消えた記録を元に戻すことはできません。</strong></p>
+
+  <h2>2. Game Center へ送る情報</h2>
+  <p>ランキングには、Apple の <strong>Game Center</strong> を利用します。Game Center にサインインした状態でゲームを遊び終えたとき、またはまだ送れていないベストがあるときに、次の情報が Apple のサーバーへ送られます。</p>
+  <ul>
+    <li><strong>得点</strong></li>
+    <li><strong>その得点を取ったときに連れていたネコの種類と、なかよしレベル</strong>（ランキングにネコの絵を出すための数値）</li>
+  </ul>
+  <p>これらは、Apple が管理する<strong>プレイヤー識別子</strong>に紐づいて記録されます。ランキングに並ぶ名前は <strong>Game Center のニックネーム</strong>で、本アプリは独自のニックネームを持たず、利用者の名前を預かることもありません。ランキング画面を開いたときは、ほかのプレイヤーの順位・ニックネーム・得点を Game Center から読み込んで表示します。<strong>Game Center にサインインしていない場合は、何も送信しません。</strong></p>
+  <p>送信された情報は Apple のプライバシーポリシー（<a href="https://www.apple.com/legal/privacy/ja/">https://www.apple.com/legal/privacy/ja/</a>）に従って取り扱われ、<strong>作者のもとに集まることはありません。</strong>サインアウトや利用の制限は、iOS の「設定」＞「Game Center」および「スクリーンタイム」から行えます。</p>
+
+  <h2>3. 集めない情報</h2>
+  <p>本アプリは次のいずれも取得しません。年齢や生年月日を尋ねることもありません。</p>
+  <ul>
+    <li>氏名、住所、電話番号、メールアドレスなどの連絡先</li>
+    <li>位置情報</li>
+    <li>カメラ、マイク、写真、連絡先、カレンダーなどの端末データ</li>
+    <li>広告の表示、広告識別子（IDFA）を用いたトラッキング、アプリ内課金</li>
+    <li>アクセス解析・行動ログ（アナリティクスや他社のトラッキング SDK を組み込んでいません）</li>
+  </ul>
+  <p>また、作者が運営するサーバーやデータベースを一切持ちません。上記の Game Center との通信を除き、本アプリが外部と通信することはありません（メニューからこのページを開いたときは、端末のブラウザがこのページを読み込みます）。本アプリはオープンソースの部品を利用していますが、いずれも端末内の処理に使うもので、外部へ情報を送るものではありません。</p>
+
+  <h2>4. 子どものプライバシー</h2>
+  <p>本アプリは個人情報を集めないため、年齢を問わず安心してご利用いただけます。</p>
+
+  <h2>5. このポリシーの変更</h2>
+  <p>本ポリシーは、法令の変更や本アプリの機能追加にあわせて改定することがあります。重要な変更があった場合は、このページの最終更新日を改めます。</p>
+
+  <h2>6. お問い合わせ</h2>
+  <p>本アプリおよび本ポリシーに関するお問い合わせは、次のアドレスまでご連絡ください。</p>
+  <div class="contact">
+    <p class="mail"><a href="mailto:dev.az.contact@gmail.com">dev.az.contact@gmail.com</a></p>
+  </div>
+</main>
+</body>
+</html>
