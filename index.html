@@ -73,6 +73,41 @@
   }
   .lead p:last-child, .contact p:last-child { margin-bottom: 0; }
   .contact .mail { font-size: 18px; font-weight: 700; word-break: break-all; }
+  /* 言語の切りかえタブ（JavaScript が動くときだけ出す） */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    width: fit-content;
+    margin: 0 0 24px;
+    padding: 4px;
+    background: var(--faint);
+    border: 1.5px solid var(--line);
+    border-radius: 999px;
+  }
+  .tabs[hidden], [role="tabpanel"][hidden] { display: none; }
+  .tabs button {
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    background: none;
+    border: 0;
+    border-radius: 999px;
+    padding: 4px 18px;
+    cursor: pointer;
+  }
+  .tabs button[aria-selected="true"] { background: var(--accent); color: var(--paper); }
+  .tabs button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  /* JavaScript が動かないときは 日本語のあとに英語を続けて出すので、その区切り */
+  #lang-en { border-top: 2px dashed var(--line); margin-top: 48px; padding-top: 32px; }
+  .js #lang-en { border-top: 0; margin-top: 0; padding-top: 0; }
+  /* 英語は欧文のシステムフォントで出す */
+  :lang(en) {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, system-ui, sans-serif;
+  }
+  section:lang(en) { line-height: 1.7; }
+  section:lang(en) .app { letter-spacing: .08em; }
   @media (max-width: 600px) {
     body { padding: 0 12px 32px; font-size: 15px; }
     .sheet { padding: 28px 20px 32px; margin-top: 20px; border-radius: 20px; }
@@ -82,6 +117,12 @@
 </head>
 <body>
 <main class="sheet">
+<div class="tabs" role="tablist" aria-label="言語 / Language" hidden>
+  <button type="button" role="tab" id="tab-ja" aria-controls="lang-ja" data-lang="ja" lang="ja">日本語</button>
+  <button type="button" role="tab" id="tab-en" aria-controls="lang-en" data-lang="en" lang="en">English</button>
+</div>
+
+<section id="lang-ja" lang="ja" role="tabpanel" aria-labelledby="tab-ja">
   <header>
     <p class="app">ねこ玉ジャンプ</p>
     <h1>プライバシーポリシー</h1>
@@ -136,7 +177,103 @@
     <p class="mail"><a href="mailto:dev.az.contact@gmail.com">dev.az.contact@gmail.com</a></p>
   </div>
 
-  <p style="margin-top:32px"><a href="support.html">サポート</a></p>
+  <p style="margin-top:32px"><a href="support.html" data-page="support.html">サポート</a></p>
+</section>
+
+<section id="lang-en" lang="en" role="tabpanel" aria-labelledby="tab-en">
+  <header>
+    <p class="app">Nekotama Jump</p>
+    <h1>Privacy Policy</h1>
+    <p class="dates">Last updated: September 28, 2026</p>
+  </header>
+
+  <div class="lead">
+    <p>The game “Nekotama Jump” (“the App”) <strong>has no servers of its own, does not collect your personal information, and never sells or shares it with third parties.</strong> Your play records are saved on your device. Only when you use the rankings does the App send your score and related data to Apple’s Game Center.</p>
+  </div>
+
+  <h2>1. Information saved on your device</h2>
+  <p>So that you can keep playing, the App saves the following information <strong>only on your device</strong> (using the standard iOS storage area). None of it can identify you personally, and it is never sent anywhere or seen by the developer.</p>
+  <ul>
+    <li>Your best score and the cat you played with at that time</li>
+    <li>The amount of kibble (an item you collect in the game)</li>
+    <li>Your Cat Book (the cats you have met and the cat you have selected) and the friendship level of each cat</li>
+    <li>Whether sound is on or off</li>
+    <li>A record of the scores already sent to Game Center (to know whether a score needs to be sent again)</li>
+    <li>How many times you have played, and when and how many times the App asked you for a review (so it does not ask too often)</li>
+  </ul>
+  <p>Deleting the App from your device erases all of the above. <strong>Erased records cannot be restored.</strong></p>
+
+  <h2>2. Information sent to Game Center</h2>
+  <p>The rankings use Apple’s <strong>Game Center</strong>. When you finish a game while signed in to Game Center, or when there is a best score that has not been sent yet, the following information is sent to Apple’s servers:</p>
+  <ul>
+    <li><strong>Your score</strong></li>
+    <li><strong>The type of cat you played with when you got that score, and its friendship level</strong> (numbers used to draw the cat in the rankings)</li>
+  </ul>
+  <p>This information is recorded under a <strong>player identifier</strong> managed by Apple. The name shown in the rankings is your <strong>Game Center nickname</strong>; the App has no nicknames of its own and never keeps your name. When you open the rankings, the App loads other players’ ranks, nicknames and scores from Game Center to display them. <strong>If you are not signed in to Game Center, nothing is sent.</strong></p>
+  <p>Information sent to Game Center is handled under Apple’s Privacy Policy (<a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a>) and <strong>is never collected by the developer.</strong> You can sign out or restrict Game Center in iOS Settings &gt; Game Center and in Screen Time.</p>
+
+  <h2>3. Information we do not collect</h2>
+  <p>The App does not collect any of the following. It also never asks for your age or date of birth.</p>
+  <ul>
+    <li>Contact details such as your name, address, phone number or email address</li>
+    <li>Location data</li>
+    <li>Device data such as the camera, microphone, photos, contacts or calendar</li>
+    <li>Advertising, tracking with the advertising identifier (IDFA), or in-app purchases</li>
+    <li>Analytics or activity logs (the App contains no analytics or third-party tracking SDKs)</li>
+  </ul>
+  <p>The developer does not run any servers or databases. Apart from the Game Center communication described above, the App does not communicate with anything outside your device (when you open this page from the menu, your device’s browser loads it). The “Share” button on the result screen only hands an image of your cat and score to the iOS share sheet; you choose where it goes, and neither the App nor the developer receives it. App reviews use the standard iOS screen, and ratings you write are handled by Apple’s App Store. The App uses open-source components, but they all run on your device and do not send information anywhere.</p>
+
+  <h2>4. Children’s privacy</h2>
+  <p>Because the App does not collect personal information, people of any age can use it with peace of mind.</p>
+
+  <h2>5. Changes to this policy</h2>
+  <p>This policy may be revised to reflect changes in law or new features in the App. If there is an important change, the “Last updated” date on this page will be updated.</p>
+
+  <h2>6. Contact</h2>
+  <p>For questions about the App or this policy, please contact us at the address below.</p>
+  <div class="contact">
+    <p class="mail"><a href="mailto:dev.az.contact@gmail.com">dev.az.contact@gmail.com</a></p>
+  </div>
+
+  <p style="margin-top:32px"><a href="support.html" data-page="support.html">Support</a></p>
+</section>
 </main>
+<script>
+  // 言語タブ。?lang=ja / ?lang=en があればそれを、なければブラウザの言語で最初のタブを決める
+  // （ページの中だけで切りかえ、外部とは通信しない）
+  (() => {
+    const titles = { ja: 'プライバシーポリシー｜ねこ玉ジャンプ', en: 'Privacy Policy | Nekotama Jump' };
+    const tabs = [...document.querySelectorAll('[role="tab"]')];
+    const show = (lang, focus) => {
+      for (const tab of tabs) {
+        const on = tab.dataset.lang === lang;
+        tab.setAttribute('aria-selected', String(on));
+        tab.tabIndex = on ? 0 : -1;
+        document.getElementById(tab.getAttribute('aria-controls')).hidden = !on;
+        if (on && focus) tab.focus();
+      }
+      document.documentElement.lang = lang;
+      document.title = titles[lang];
+      // ほかのページへのリンクにも いまの言語を引きつぐ
+      for (const a of document.querySelectorAll('a[data-page]')) a.href = `${a.dataset.page}?lang=${lang}`;
+      history.replaceState(null, '', `?lang=${lang}${location.hash}`);
+    };
+    const q = new URLSearchParams(location.search).get('lang');
+    const first = q in titles ? q : /^ja\b/i.test(navigator.language || '') ? 'ja' : 'en';
+    for (const tab of tabs) {
+      tab.addEventListener('click', () => show(tab.dataset.lang));
+      // ← → キーでも切りかえる
+      tab.addEventListener('keydown', (e) => {
+        const d = { ArrowLeft: -1, ArrowRight: 1 }[e.key];
+        if (!d) return;
+        const next = tabs[(tabs.indexOf(tab) + d + tabs.length) % tabs.length];
+        show(next.dataset.lang, true);
+      });
+    }
+    document.documentElement.classList.add('js');
+    document.querySelector('.tabs').hidden = false;
+    show(first);
+  })();
+</script>
 </body>
 </html>
