@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>サポート｜ねこ玉ジャンプ</title>
+<meta name="description" content="ゲーム「ねこ玉ジャンプ」のサポートページ。遊びかた・よくある質問・お問い合わせ先。">
+<style>
+  /* 配色はアプリ本体（lib/game/palette.dart）のさくら色に合わせている。
+     フォントは端末に入っているものだけを使い、外部から何も読み込まない
+     （ページを開いただけで第三者へ通信が飛ばないようにするため）。 */
+  :root {
+    --page: #fbd0e0;
+    --paper: #fffaf6;
+    --ink: #4a3b45;
+    --ink-soft: #7e6776;
+    --accent: #c9557f;
+    --line: #e6d3de;
+    --faint: #fdf1f6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --page: #2a1f26;
+      --paper: #362a32;
+      --ink: #f6e9f0;
+      --ink-soft: #c9b3c1;
+      --accent: #f59cbd;
+      --line: #56434f;
+      --faint: #402f3a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 20px 48px;
+    background: var(--page);
+    color: var(--ink);
+    font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+                 "Noto Sans JP", "Yu Gothic Medium", "Yu Gothic", Meiryo, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.9;
+    -webkit-text-size-adjust: 100%;
+  }
+  .sheet {
+    max-width: 720px;
+    margin: 40px auto 0;
+    background: var(--paper);
+    border-radius: 26px;
+    padding: 40px 32px 44px;
+    box-shadow: 0 3px 0 rgba(74, 59, 69, .1), 0 18px 34px rgba(74, 59, 69, .18);
+  }
+  header { border-bottom: 2px solid var(--line); padding-bottom: 20px; }
+  .app { font-size: 14px; letter-spacing: .2em; color: var(--ink-soft); margin: 0 0 6px; font-weight: 700; }
+  h1 { font-size: 26px; line-height: 1.5; margin: 0 0 12px; font-weight: 800; }
+  .dates { font-size: 13px; color: var(--ink-soft); margin: 0; }
+  h3 { font-size: 16px; margin: 26px 0 8px; line-height: 1.6; }
+  h2 {
+    font-size: 18px;
+    margin: 40px 0 12px;
+    padding-left: 12px;
+    border-left: 5px solid var(--accent);
+    line-height: 1.6;
+  }
+  p { margin: 0 0 14px; }
+  ul, ol { margin: 0 0 14px; padding-left: 1.4em; }
+  li { margin-bottom: 6px; }
+  a { color: var(--accent); }
+  .lead, .contact {
+    background: var(--faint);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin: 24px 0 8px;
+  }
+  .lead p:last-child, .contact p:last-child { margin-bottom: 0; }
+  .contact .mail { font-size: 18px; font-weight: 700; word-break: break-all; }
+  @media (max-width: 600px) {
+    body { padding: 0 12px 32px; font-size: 15px; }
+    .sheet { padding: 28px 20px 32px; margin-top: 20px; border-radius: 20px; }
+    h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+<main class="sheet">
+  <header>
+    <p class="app">ねこ玉ジャンプ</p>
+    <h1>サポート</h1>
+    <p class="dates">最終更新日：2026年9月28日</p>
+  </header>
+
+  <div class="lead">
+    <p>ゲーム「ねこ玉ジャンプ」についての、遊びかたの要約とよくある質問です。ここで解決しないことは、<a href="#contact">お問い合わせ</a>からご連絡ください。</p>
+  </div>
+
+  <h2>遊びかた</h2>
+  <p>丸まったネコを、竹カゴからカゴへ投げて空をのぼっていくゲームです。</p>
+  <ol>
+    <li>画面のどこでもよいので、<strong>下に引っぱります</strong>。</li>
+    <li>はなすと、ネコがぽーんと飛びます。</li>
+    <li>上のカゴに入れば先へ進みます。<strong>落ちたらおしまい</strong>です。</li>
+  </ol>
+  <ul>
+    <li>カゴのふちに触れずに入れると<strong>ナイス</strong>。続けて決めるほど得点が増えます。</li>
+    <li>とちゅうで拾える<strong>カリカリ</strong>は、ネコを集めたり、なかよくなったりするのに使えます。</li>
+  </ul>
+
+  <h3>ネコずかん・なかよし度</h3>
+  <ul>
+    <li>カリカリ 20 こで<strong>まよいネコを呼ぶ</strong>と、新しいネコがずかんに加わります。とちゅうに出てくる泡を拾って仲間になることもあります。</li>
+    <li>いっしょに遊んだり、カリカリ 20 こで<strong>おやつ</strong>をあげたりすると、そのネコとの<strong>なかよし度</strong>が上がります。</li>
+    <li>なかよしレベルが上がると、にっこり顔・リボン・首輪とすず・ハートのきせきといった<strong>見た目のごほうび</strong>が増えます。性能は変わらないので、好きなネコで遊べます。</li>
+  </ul>
+
+  <h2>よくある質問</h2>
+
+  <h3>ランキングに順位が出ません</h3>
+  <p>ランキングは Apple の <strong>Game Center</strong> を使っています。次を確かめてください。</p>
+  <ol>
+    <li>iOS の「設定」＞「Game Center」でサインインしているか。</li>
+    <li>ネットワークにつながっているか（圏内か）。</li>
+    <li>1 回以上、ゲームを遊び終えているか。</li>
+  </ol>
+  <p>記録が Game Center のランキングに出るまで、すこし時間がかかることがあります。送れなかったベストは、次にアプリを起動したときやランキングを開いたときに送り直します。Game Center にサインインしていなくても、ゲームはそのまま遊べます。</p>
+
+  <h3>ベストや集めたネコが消えました</h3>
+  <p>記録は<strong>お使いの端末の中だけ</strong>に保存しています。アプリを削除する、端末を初期化する、機種変更する、といった場合は記録が消え、元に戻すことはできません。</p>
+
+  <h3>音が鳴りません</h3>
+  <p>次を確かめてください。</p>
+  <ul>
+    <li>画面右上の <strong>♪</strong> ボタンで音をオフにしていないか（線が引かれているときはオフです。押すと切りかわります）。</li>
+    <li>端末の<strong>消音スイッチ（マナーモード）</strong>がオンになっていないか。マナーモードのときは、BGM も効果音も鳴りません。</li>
+    <li>端末の音量が下がっていないか。</li>
+  </ul>
+
+  <h3>記録を自分で消したい</h3>
+  <p>アプリの中に記録を消す操作はありません。端末に残る記録は、<strong>本アプリを端末から削除する</strong>とすべて消えます。<strong>消えた記録を元に戻すことはできません。</strong>なお、Game Center 側に送った順位は、iOS の「設定」＞「Game Center」から管理してください。</p>
+
+  <h3>広告や課金はありますか</h3>
+  <p>ありません。アプリ内課金・広告表示・トラッキングのいずれも行いません。詳しくは<a href="./">プライバシーポリシー</a>をご覧ください。</p>
+
+  <h2>動作環境</h2>
+  <p>iOS 15.0 以降の iPhone・iPad。iPad では、iPhone と同じ縦長の画面を中央に表示します。ランキング（Game Center）の利用にはネットワーク接続が必要です。</p>
+
+  <h2 id="contact">お問い合わせ</h2>
+  <p>不具合のご報告には、<strong>アプリの「メニュー」＞「アプリケーション情報」に出ているバージョン</strong>、お使いの端末と iOS のバージョンを添えていただけると助かります。</p>
+  <div class="contact">
+    <p class="mail"><a href="mailto:dev.az.contact@gmail.com">dev.az.contact@gmail.com</a></p>
+  </div>
+
+  <p style="margin-top:32px"><a href="./">プライバシーポリシー</a></p>
+</main>
+</body>
+</html>
